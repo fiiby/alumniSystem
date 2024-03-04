@@ -1,5 +1,5 @@
 <x-html class="font-sans">
-    <h1>Hello World</h1>
+  
 </x-html>
 
 

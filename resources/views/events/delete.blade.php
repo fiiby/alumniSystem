@@ -1,4 +1,4 @@
-<app-x-layout>
+<x-app-layout>
     <x-slot name="header">
         Delete Event
     </x-slot>
@@ -15,4 +15,4 @@
             <button type="submit">Delete</button>
         </form>
     </x-slot>
-</app-x-layout>
+</x-app-layout>

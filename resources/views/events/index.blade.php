@@ -1,6 +1,6 @@
-<app-x-layout>
+<x-app-layout>
     <x-slot name="header">
-        Events
+        <h1>Events</h1>
     </x-slot>
 
     <x-slot name="content">
@@ -24,4 +24,4 @@
         </ul>
         @endif
     </x-slot>
-</app-x-layout>
+</x-app-layout>

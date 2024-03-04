@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumController;
 use App\Http\Controllers\EventController;
 
-use App\Models\Alumni;
+// use App\Models\Alum;
+// use App\Models\Event;
+
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -14,7 +14,7 @@ class EventController extends Controller
     {
         // Logic to fetch all events from the database
         $events = Event::all();
-        return view('event.index', ['events' => $events]);
+        return view('events.index', ['events' => $events]);
     }
 
     /**
@@ -22,7 +22,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        return view('events.create');
     }
 
     /**

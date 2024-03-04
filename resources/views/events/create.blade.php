@@ -1,4 +1,4 @@
-<app-x-layout>
+<x-app-layout>
     <x-slot name="header">
         Create Event
     </x-slot>
@@ -43,4 +43,4 @@
             <button type="submit">Create Event</button>
         </form>
     </x-slot>
-</app-x-layout>
+</x-app-layout>
