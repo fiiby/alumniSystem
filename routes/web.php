@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AlumController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\JobController;
+
 
 // use App\Models\Alum;
 // use App\Models\Event;
@@ -30,8 +32,7 @@ Route::get('/dashboard', function () {
 
 Route::resource('/alum', AlumController::class);
 Route::resource('/events', EventController::class);
-
-
+Route::resource('/jobs', JobController::class);
 
 
 
