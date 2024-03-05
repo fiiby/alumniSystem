@@ -33,12 +33,15 @@
                                 <td class="border px-4 py-2">{{ $job->application_deadline }}</td>
                                 <td class="border px-4 py-2">
                                     <a href="{{ route('jobs.show', $job->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Show</a>
+                                    <!-- a tag not displayed in the page -->
+
                                     <a href="{{ route('jobs.edit', $job->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Edit</a>
-                                    <!-- <form action="{{ route('jobs.destroy', $job->id) }}" method="POST">
+                                    <!-- a-tag not displayed in the page -->
+
+                                    <form action="{{ route('jobs.apply', $job->id) }}" method="POST">
                                         @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-                                    </form> -->
+                                        <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Apply</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

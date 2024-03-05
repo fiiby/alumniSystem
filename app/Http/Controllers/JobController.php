@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Job;
+use App\Models\JobApplication;
+
 
 class JobController extends Controller
 {
@@ -63,6 +65,39 @@ class JobController extends Controller
         $job->update($request->all());
         return redirect()->route('jobs.index')
             ->with('success', 'Job updated successfully');
+    }
+    /**
+     * Show the form for applying to a job.
+     */
+    public function apply(Request $request, Job $job)
+    {
+        return view('jobs.apply', ['job' => $job]);
+    }
+
+    /**
+     * Store a newly created job application in storage.
+     */
+    public function storeApplication(Request $request, Job $job)
+    {
+        // Validate the form data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'resume' => 'required|file|mimes:pdf,doc,docx|max:2048', // Example: Limit to PDF, DOC, DOCX files
+        ]);
+
+        // Store the resume file
+        $resumePath = $request->file('resume')->store('resumes');
+
+        // Create a new job application record
+        $jobApplication = new JobApplication();
+        $jobApplication->job_id = $job->id;
+        $jobApplication->name = $validatedData['name'];
+        $jobApplication->email = $validatedData['email'];
+        $jobApplication->resume_path = $resumePath;
+        $jobApplication->save();
+
+        return redirect()->route('jobs.index')->with('success', 'Job application submitted successfully');
     }
 
     /**
